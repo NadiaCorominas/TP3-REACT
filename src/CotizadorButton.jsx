@@ -21,7 +21,7 @@ function CotizadorButton({ tipoPropiedad, tipoUbicacion, inputValue, propiedades
     const valorInput = parseFloat(inputValue);
 
     // Realiza el cálculo.
-    const cotizacion = (factorPropiedad + factorUbicacion) * valorInput;
+    const cotizacion = (factorPropiedad * factorUbicacion) * valorInput;
 
     // Llama a la función onCalcular para pasar el resultado al componente Formulario.
     onCalcular(cotizacion);

@@ -25,15 +25,15 @@ function Historial() {
           </tr>
         </thead>
         <tbody>
-          {historial.map((cotizacion, index) => (
-            <tr key={index}>
-              <td>{cotizacion.fechaHora}</td>
-              <td>{cotizacion.tipoPropiedad}</td>
-              <td>{cotizacion.tipoUbicacion}</td>
-              <td>${cotizacion.importePoliza.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
+      {historial.map((cotizacion, index) => (
+    <tr key={index}>
+      <td>{cotizacion.fechaHora}</td>
+      <td>{cotizacion.tipoPropiedad}</td>
+      <td>{cotizacion.tipoUbicacion}</td>
+      <td>${typeof cotizacion.importePoliza === 'number' ? cotizacion.importePoliza.toFixed(2) : 'N/A'}</td>
+    </tr>
+  ))}
+</tbody>
       </table>
       <Link to="/">Volver a la página principal</Link>
     </div>
