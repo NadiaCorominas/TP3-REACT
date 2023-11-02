@@ -1,6 +1,9 @@
 import React from 'react';
 
 function CotizadorButton({ tipoPropiedad, tipoUbicacion, inputValue, propiedades, ubicaciones, onCalcular }) {
+  // Agrega la constante costoM2 con el valor 35.86
+  const costoM2 = 35.86;
+
   const handleCotizar = () => {
     if (!tipoPropiedad || !tipoUbicacion || !inputValue) {
       alert('Por favor, complete todos los campos.');
@@ -20,8 +23,8 @@ function CotizadorButton({ tipoPropiedad, tipoUbicacion, inputValue, propiedades
     // Convierte el valor del input a número.
     const valorInput = parseFloat(inputValue);
 
-    // Realiza el cálculo.
-    const cotizacion = (factorPropiedad * factorUbicacion) * valorInput;
+    // Realiza el cálculo multiplicando por costoM2
+    const cotizacion = (factorPropiedad * factorUbicacion * valorInput * costoM2).toFixed(2);
 
     // Llama a la función onCalcular para pasar el resultado al componente Formulario.
     onCalcular(cotizacion);
