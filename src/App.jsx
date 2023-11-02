@@ -1,24 +1,12 @@
-import Inicio from "./Inicio";
-import Historial from "./Historial";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import Formulario from './Formulario';
 
-function App () {
-return <>
-
-
-<BrowserRouter>
-<Routes>
-  <Route path= "/" Component={Inicio}/>
-  <Route path= "/historial" Component={Historial}/>
-  
-</Routes>
-
-
-</BrowserRouter>
-
-</>
-
-
+function App() {
+  return (
+    <div className="App">
+      <Formulario />
+    </div>
+  );
 }
 
 export default App;
