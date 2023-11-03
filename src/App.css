@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #e66465, #9198e5, #72c6e5);
+    background-size: 400% 400%;
+    animation: gradientBackground 30s linear infinite;
+  }
+  
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  
+ 
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: royalblue;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+ 
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(130, 146, 238);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+  
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+    
+  }
+  
+  
+  form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  button:hover {
+    background-color:green;
+  }
+  
+ 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+
+  
