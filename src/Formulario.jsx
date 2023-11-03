@@ -10,12 +10,11 @@ function Formulario() {
   const [resultado, setResultado] = useState(null);
 
   useEffect(() => {
-    // Cargar datos del primer selector desde el mock API de propiedades
-    fetch('https://653831aaa543859d1bb14d53.mockapi.io/propiedades')
+        fetch('https://653831aaa543859d1bb14d53.mockapi.io/propiedades')
       .then((response) => response.json())
       .then((data) => setPropiedades(data));
 
-    // Cargar datos del segundo selector desde el mock API de ubicaciones
+ 
     fetch('https://653831aaa543859d1bb14d53.mockapi.io/ubicaciones')
       .then((response) => response.json())
       .then((data) => setUbicaciones(data));
@@ -29,7 +28,6 @@ function Formulario() {
       return;
     }
 
-    // Realiza lo que necesites con los datos (por ejemplo, enviarlos a una API).
     console.log('Tipo de Propiedad:', tipoPropiedad);
     console.log('Tipo de Ubicación:', tipoUbicacion);
     console.log('Valor del input:', inputValue);
@@ -37,7 +35,7 @@ function Formulario() {
 
   return (
     <div>
-      <h2>Formulario con Validaciones y Selects desde Mock APIs</h2>
+
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="tipoPropiedad">Tipo de Propiedad:</label>
@@ -70,12 +68,13 @@ function Formulario() {
           </select>
         </div>
         <div>
-          <label htmlFor="inputField">Campo de entrada:</label>
+          <label htmlFor="inputField">Ingrese los Metros²:</label>
           <input
-            type="text"
+            type="number"
             id="inputField"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            min="10"
           />
         </div>
         <CotizadorButton
@@ -88,7 +87,7 @@ function Formulario() {
         />
         {resultado !== null && (
           <div>
-            <p>Resultado: {resultado}</p>
+            <p>Valor: $ {resultado}</p>
           </div>
         )}
       </form>

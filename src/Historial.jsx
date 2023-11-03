@@ -5,7 +5,6 @@ function Historial() {
   const [historial, setHistorial] = useState([]);
 
   useEffect(() => {
-    // Recupera el historial del almacenamiento local y actualiza el estado.
     const historialGuardado = JSON.parse(localStorage.getItem('historial'));
     if (historialGuardado) {
       setHistorial(historialGuardado);
@@ -21,7 +20,7 @@ function Historial() {
             <th>Fecha y Hora</th>
             <th>Tipo de Propiedad</th>
             <th>Tipo de Ubicación</th>
-            <th>Importe de Póliza Mensual</th>
+            <th>Importe Mensual</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +31,9 @@ function Historial() {
               <td>{cotizacion.tipoUbicacion}</td>
               <td>
                 {typeof cotizacion.importePoliza === 'string'
-                  ? cotizacion.importePoliza
+                  ? cotizacion.importePoliza.startsWith('$') // Verificar si ya comienza con $
+                    ? cotizacion.importePoliza // Dejar como está
+                    : `$${cotizacion.importePoliza}` // Agregar $
                   : `$${cotizacion.importePoliza.toFixed(2)}`
                 }
               </td>
